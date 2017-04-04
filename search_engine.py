@@ -127,7 +127,7 @@ def crawl_web(page_url):
                 break               #else try (max 5 times) till its not loaded properly
             flag-=1
         if not flag:                #if page doesnt load , contains error
-            continue                #den ignore it
+            continue                #then ignore it
 
         add_to_index(index, text, url)
         new_links = get_all_links(text, links, crawled)
