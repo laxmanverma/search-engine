@@ -75,22 +75,22 @@ def add_to_index(index, text, url):
             index[word].append(url)
     return index
 
-def partition(s,ranks,lb,ub):
-    i=lb+1
-    j=lb+1
-    while(j<=ub):
-        if(ranks[s[j]]>=ranks[s[lb]]):  
+def partition(s,ranks,start,end):
+    i=start+1
+    j=start+1
+    while(j<=end):
+        if(ranks[s[j]]>=ranks[s[start]]):  
             s[j],s[i]=s[i],s[j]
             i+=1
         j+=1
-    s[lb],s[i-1]=s[i-1],s[lb]
+    s[start],s[i-1]=s[i-1],s[start]
     return i-1
 
-def quicksort(s,ranks,lb,ub):
-    if(lb<ub):
-        pivot=partition(s,ranks,lb,ub)
-        quicksort(s,ranks,lb,pivot-1)
-        quicksort(s,ranks,pivot+1,ub)
+def quicksort(s,ranks,start,end):
+    if(start<end):
+        pivot=partition(s,ranks,start,end)
+        quicksort(s,ranks,start,pivot-1)
+        quicksort(s,ranks,pivot+1,end)
 
 def url_ordering(ranks, index):
     for word in index:
