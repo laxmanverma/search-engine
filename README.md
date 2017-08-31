@@ -6,3 +6,10 @@ Given the seed page url, the program takes a couple of minutes (usually 15-20 mi
 On calculating all the results, user can make infinite number of single-word queries and the program displays the top results based on the search.
 The very famous Page Rank algorithm has been used in the program. The results are sorted in decreasing order of their ranks computed with the ranks displayed alongside.
 
+To clone the repository
+
+$ git clone https://github.com/laxmanverma/search-engine.git
+
+to run the script 
+
+$ python search_engine.py
